@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+    <script>
+      window._trackJs = {
+        token: '<%= htmlWebpackPlugin.options.trackJSToken %>'
+      };
+    </script>
+    <% } %>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta charset="utf-8" />
+      <title>Weather</title>
+</head>
+
+<body>
+  <div class="container" id="home">
+    <div class="row">
+      <div class="col-md-4 well">
+        <h1>Today</h1>
+        <h2 id="today-date"></h2>
+        <strong id="today-description"></strong>
+        <h2><span style="font-size:15px;" class="glyphicon glyphicon-arrow-up"></span> <span id="today-high"></span><br/><span style="font-size:12px;" class="glyphicon glyphicon-arrow-down"></span> <small style="color:#555;" id="today-low"></small></h2>
+        <p>Humidity: <span id="today-humidity"></span></p>
+        <p>Wind: <span id="today-wind"></span></p>
+        <p>Pressure: <span id="today-pressure"></span></p>
+      </div>
+    </div>
+  </div> 
+</body>
+const month = new Array();
+
+
+month[0] = "Jan";
+month[1] = "Feb";
+month[2] = "Mar";
+month[3] = "Apr";
+month[4] = "May";
+month[5] = "Jun";
+month[6] = "Jul";
+month[7] = "Aug";
+month[8] = "Sep";
+month[9] = "Oct";
+month[10] = "Nov";
+month[11] = "Dec";
+
+fetch('http://api.openweathermap.org/data/2.5/weather?q=Atlanta,ga&units=imperial&appid=6b4fec3cfeb666ed226daff42cb09a95')
+.then(response=>response.json())
+.then(json=>{
+  document.title = 'Forecast for '+json.name;
+  let d = new Date(0);
+  d.setUTCSeconds(json.dt);
+  document.getElementById('today-date').innerHTML = month[d.getMonth()]+" "+d.getDate();
+  document.getElementById('today-description').innerHTML = json.weather[0].description;
+  document.getElementById('today-high').innerHTML = Math.floor(json.main.temp_max);
+  document.getElementById('today-low').innerHTML = Math.floor(json.main.temp_min);
+  document.getElementById('today-humidity').innerHTML = Math.floor(json.main.humidity)+"%";
+  document.getElementById('today-wind').innerHTML = Math.floor(json.wind.speed)+" km/h";
+  document.getElementById('today-pressure').innerHTML = Math.floor(json.main.pressure)+" hpa";
+  // document.getElementById('app').innerHTML = JSON.stringify(json);
+
+});
+</html>
