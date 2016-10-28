@@ -10,13 +10,16 @@
 </head>
 
 <body>
+    <h1 style="text-align:center;">THE WEATHER</h1>
+    <h2 style="text-align:center;">Weather For Atlanta, GA</h2>
+    <h3 id="loading">Loading...</h3>
     <div class="container well" id="homepage">
         <div class="row">
             <div class="col-md-4">
                 <div class="row">
+                    <h1 class="text-center">Today <small id="today-date"></small></h1>
                     <div class="col-xs-6">
-                        <h1>Today</h1>
-                        <h3 id="today-date"></h3>
+                        <img class="weather-icon" id="today-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
                     </div>
                     <div class="col-xs-6">
                         <h2>
@@ -42,106 +45,118 @@
                 <ul class="list-group">
                     <li class="list-group-item">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
+                                <img class="weather-icon" id="tomorrow-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+                            </div>
+                            <div class="col-sm-4">
                                 <strong>Tomorrow - <span id="tomorrow-date"></span></strong></br>
                                 <p>
                                     <span class="text-success"><span style="font-size:13px;" class="glyphicon glyphicon-arrow-up"></span> <span style="font-size:16px;" id="tomorrow-high"></span></span>
                                     <span class="text-danger"><span style="font-size:10px;" class="glyphicon glyphicon-arrow-down"></span> <span style="font-size:12px;" id="tomorrow-low"></span></span>
                                     &nbsp;&nbsp;<span id="tomorrow-description"></span>
                                 </p>
-                                <a href="#tomorrow">Details</a>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="tomorrow-humidity"></strong><br/><small>Humidity</small>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="tomorrow-wind"></strong> <small id="tomorrow-direction"></small><br/><small>Wind</small>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="tomorrow-pressure"></strong><br/><small>Pressure</small>
                             </div>
                         </div>
+                        <a class="detail-link" href="#tomorrow">More Details</a>
                     </li>
                     <li class="list-group-item">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
+                                <img class="weather-icon" id="thirdDay-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+                            </div>
+                            <div class="col-sm-4">
                                 <strong><span id="thirdDay-weekday"></span> - <span id="thirdDay-date"></span></strong></br>
                                 <p>
                                     <span class="text-success"><span style="font-size:13px;" class="glyphicon glyphicon-arrow-up"></span> <span style="font-size:16px;" id="thirdDay-high"></span></span>
                                     <span class="text-danger"><span style="font-size:10px;" class="glyphicon glyphicon-arrow-down"></span> <span style="font-size:12px;" id="thirdDay-low"></span></span>
                                     &nbsp;&nbsp;<span id="thirdDay-description"></span>
                                 </p>
-                                <a href="#thirdDay">Details</a>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="thirdDay-humidity"></strong><br/><small>Humidity</small>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="thirdDay-wind"></strong> <small id="thirdDay-direction"></small><br/><small>Wind</small>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="thirdDay-pressure"></strong><br/><small>Pressure</small>
                             </div>
                         </div>
+                        <a class="detail-link" href="#thirdDay">More Details</a>
                     </li>
                     <li class="list-group-item">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
+                                <img class="weather-icon" id="fourthDay-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+                            </div>
+                            <div class="col-sm-4">
                                 <strong><span id="fourthDay-weekday"></span> - <span id="fourthDay-date"></span></strong></br>
                                 <p>
                                     <span class="text-success"><span style="font-size:13px;" class="glyphicon glyphicon-arrow-up"></span> <span style="font-size:16px;" id="fourthDay-high"></span></span>
                                     <span class="text-danger"><span style="font-size:10px;" class="glyphicon glyphicon-arrow-down"></span> <span style="font-size:12px;" id="fourthDay-low"></span></span>
                                     &nbsp;&nbsp;<span id="fourthDay-description"></span>
                                 </p>
-                                <a href="#fourthDay">Details</a>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="fourthDay-humidity"></strong><br/><small>Humidity</small>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="fourthDay-wind"></strong> <small id="fourthDay-direction"></small><br/><small>Wind</small>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="fourthDay-pressure"></strong><br/><small>Pressure</small>
                             </div>
                         </div>
+                        <a class="detail-link" href="#fourthDay">More Details</a>
                     </li>
                     <li class="list-group-item">
                         <div class="row">
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
+                                <img class="weather-icon" id="fifthDay-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
+                            </div>
+                            <div class="col-sm-4">
                                 <strong><span id="fifthDay-weekday"></span> - <span id="fifthDay-date"></span></strong></br>
                                 <p>
                                     <span class="text-success"><span style="font-size:13px;" class="glyphicon glyphicon-arrow-up"></span> <span style="font-size:16px;" id="fifthDay-high"></span></span>
                                     <span class="text-danger"><span style="font-size:10px;" class="glyphicon glyphicon-arrow-down"></span> <span style="font-size:12px;" id="fifthDay-low"></span></span>
                                     &nbsp;&nbsp;<span id="fifthDay-description"></span>
                                 </p>
-                                <a href="#fifthDay">Details</a>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="fifthDay-humidity"></strong><br/><small>Humidity</small>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="fifthDay-wind"></strong> <small id="fifthDay-direction"></small><br/><small>Wind</small>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-sm-2">
                                 <strong id="fifthDay-pressure"></strong><br/><small>Pressure</small>
                             </div>
                         </div>
+                        <a class="detail-link" href="#fifthDay">More Details</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div> 
-    <div class="container" id="detailpage" style="display:none;">
+    <div class="container" id="detailpage">
         <div class="row">
             <div class="col-md-4">
-                <h1><a href="#"><span class="glyphicon glyphicon-chevron-left pull-right"></span></a></h1>
+                <h1 id="home-btn"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></h1>
             </div>
             <div class="col-md-4 well">
                 <div class="row">
+                    <h1 class="text-center"><span id="detail-weekday"></span> <small id="detail-date"></small></h1>
                     <div class="col-xs-6">
-                        <h1 id="detail-weekday"></h1>
-                        <h3 id="detail-date"></h3>
+                        <img class="weather-icon" id="detail-icon" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" />
                     </div>
                     <div class="col-xs-6">
                         <h2>
